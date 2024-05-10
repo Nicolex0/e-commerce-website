@@ -19,11 +19,16 @@
   background-color: #f9f9f9; /* Light gray background color */
   padding: 20px;
   font-family: 'Roboto', sans-serif; /* Use Roboto font */
-  font-size: 18px; /* Increase font size */
+  font-size: 20px; /* Increase font size */
   font-weight: 700; /* Bold font */
   display: flex; /* Display navbar as flex */
   justify-content: space-between; /* Space between navbar items */
   align-items: center; /* Center items vertically */
+}
+
+.navbar .brand{
+  font-size: 100px; /* Adjust size of the brand text */
+  font-weight: bold; /* Make brand text bold */
 }
 
 .navbar input[type="text"] {
@@ -56,44 +61,41 @@
   gap: 20px;
 }
 
-/* Product Card styles */
 .product-card {
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 16px;
-  box-sizing: border-box; /* Include padding and border in the element's total width */
+  overflow: hidden; /* Hide overflowing content */
   display: flex; /* Display as flex */
   flex-direction: column; /* Stack elements vertically */
 }
 
 .product-card img {
   width: 100%;
-  height: auto; /* Set height to auto */
-  object-fit: cover; /* Ensure the image fills the container */
-  border-radius: 8px 8px 0 0;
+  height: 400px;
+  object-fit: cover;
 }
 
 .product-card .product-details {
-  margin-top: 10px;
+  flex-grow: 1; /* Expand to fill remaining space */
+  padding: 16px; /* Add padding */
 }
 
 .product-card .bold {
-  font-weight: 700; /* Bold font */
+  font-weight: 700;
 }
 
 .product-card .add-to-cart {
-  width: 100%;
   padding: 10px;
-  background-color: #4CAF50; /* Green background color */
-  color: white; /* White text color */
+  background-color: #4CAF50;
+  color: white;
   border: none;
-  border-radius: 0 0 8px 8px;
+  border-radius: 0;
   cursor: pointer;
-  transition: background-color 0.3s; /* Smooth hover effect */
+  transition: background-color 0.3s;
 }
 
 .product-card .add-to-cart:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #45a049;
 }
 
 /* Navbar Item styles */
