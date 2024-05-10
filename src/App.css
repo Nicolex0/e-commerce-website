@@ -1,38 +1,117 @@
 .App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* App.css */
+
+/* Footer styles */
+.footer {
+  background-color: black; /* Black background color */
+  color: white; /* White text color */
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Nav bar styles */
+.navbar {
+  background-color: #f9f9f9; /* Light gray background color */
+  padding: 20px;
+  font-family: 'Roboto', sans-serif; /* Use Roboto font */
+  font-size: 18px; /* Increase font size */
+  font-weight: 700; /* Bold font */
+  display: flex; /* Display navbar as flex */
+  justify-content: space-between; /* Space between navbar items */
+  align-items: center; /* Center items vertically */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar input[type="text"] {
+  width: 200px; /* Set a specific width */
+  padding: 8px; /* Reduce padding */
+  margin-right: 10px; /* Reduce margin */
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar button {
+  background-color: #4CAF50; /* Green background color */
+  color: white; /* White text color */
+  border: none;
+  border-radius: 20px; /* Rounded corners */
+  padding: 10px 20px; /* Add padding */
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.navbar button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Product Card Container styles */
+
+.product-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Product Card styles */
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+  display: flex; /* Display as flex */
+  flex-direction: column; /* Stack elements vertically */
+}
+
+.product-card img {
+  width: 100%;
+  height: auto; /* Set height to auto */
+  object-fit: cover; /* Ensure the image fills the container */
+  border-radius: 8px 8px 0 0;
+}
+
+.product-card .product-details {
+  margin-top: 10px;
+}
+
+.product-card .bold {
+  font-weight: 700; /* Bold font */
+}
+
+.product-card .add-to-cart {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50; /* Green background color */
+  color: white; /* White text color */
+  border: none;
+  border-radius: 0 0 8px 8px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+.product-card .add-to-cart:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Navbar Item styles */
+.navbar ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0; /* Remove default padding */
 }
 
-.App-link {
-  color: #61dafb;
+.navbar ul li {
+  margin-right: 20px; /* Add some space between navbar items */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar ul li a {
+  text-decoration: none; /* Remove underline from links */
+  color: black; /* Set link color */
+}
+
+.navbar ul li a:hover {
+  color: #4CAF50; /* Change color on hover */
 }
