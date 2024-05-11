@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from './components/ProductCard';
 import './App.css';
+import Sidebar from './components/Sidebar';
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [showSidebar, setShowSidebar] = useState(false);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -21,17 +23,25 @@ function App() {
           <input type="text" placeholder="Search for product category" />
         </div>
         <div className="navbar-right">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#profile">Profile</a></li>
-          <li><a href="#cart">Cart</a></li>
-        </ul>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li>
+              <a href="#cart" onClick={() => setShowSidebar(true)}>
+                Cart
+                {/*
+                  Add notification badge here to indicate the number of items in the cart
+                  Example: <span className="badge">{cartItemCount}</span>
+                */}
+              </a>
+            </li>
+          </ul>
         </div>
       </nav>
 
       {/* Header */}
       <header className="header">
-        <img src="public/Free Photo _ Front view of cyber monday shopping cart with bags and copy space (1).jpeg" alt="Header Image" />
+        <img src="/Free Photo _ Front view of cyber monday shopping cart with bags and copy space (1).jpeg" alt="Header Image" />
         <button>Shop Now</button>
       </header>
 
@@ -53,12 +63,9 @@ function App() {
       </footer>
 
       {/* Side Bar */}
-      <div className="sidebar">
-        {/* Add sidebar content here */}
-      </div>
+      {showSidebar && <Sidebar />}
     </div>
   );
 }
 
 export default App;
-
