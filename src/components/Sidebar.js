@@ -1,18 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './Sidebar.css';
 
-const Sidebar = () => {
+function Sidebar() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <div className="sidebar">
-      <div className="cart">
-        <h3>Shopping Cart</h3>
-        {/* Cart items go here */}
-        <div className="total">Total: $0.00</div>
-        <button className="checkout-btn">Place Order & Proceed to Checkout</button>
+    <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+      <div className="navbar">
+        <div className="toggle-btn" onClick={toggleSidebar}>
+          <i className={`fas ${isSidebarOpen ? 'fa-chevron-left' : 'fa-chevron-right'}`}></i>
+        </div>
+        <ul>
+          <li><a href="#cart">Cart Items</a></li>
+          <li><a href="#checkout">Checkout</a></li>
+          <li><a href="#order-history">Order History</a></li>
+        </ul>
       </div>
-      <div className="order-history">
-        <h3>Order History</h3>
-        {/* Order history items go here */}
-      </div>
+      {/* Add cart items, checkout, and order history sections here */}
     </div>
   );
 }
