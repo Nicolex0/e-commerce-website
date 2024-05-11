@@ -31,7 +31,7 @@ function App() {
 
       {/* Header */}
       <header className="header">
-        <img src="path_to_your_image.jpg" alt="Header Image" />
+        <img src="public/Free Photo _ Front view of cyber monday shopping cart with bags and copy space (1).jpeg" alt="Header Image" />
         <button>Shop Now</button>
       </header>
 
