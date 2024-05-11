@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Sidebar.css';
+import '../App.css';
 
 function Sidebar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -26,3 +26,4 @@ function Sidebar() {
 }
 
 export default Sidebar;
+
