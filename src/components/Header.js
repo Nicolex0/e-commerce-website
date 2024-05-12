@@ -4,12 +4,11 @@ import '../App.css'; // Import your App.css file
 function Header() {
   return (
     <header className="header">
-      <img
-        src="/Free Photo _ Front view of cyber monday shopping cart with bags and copy space (1).jpeg"
-        alt="Cyber Monday Header"
-        className="header-image"
-      />
-      <div className="shop-now-button-container">
+      <div className="header-content">
+        <img
+          src="/Free Photo _ Front view of cyber monday shopping cart with bags and copy space (1).jpeg"
+          alt="Header Image"
+        />
         <button className="shop-now-button">Shop Now</button>
       </div>
     </header>
