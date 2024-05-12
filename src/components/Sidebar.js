@@ -1,20 +1,23 @@
 import React from 'react';
-import '../App.css';
 
-function Sidebar({ isSidebarOpen, toggleSidebar }) {
+function Sidebar({ isOpen, toggleSidebar }) {
   return (
-    <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
-      <div className="navbar">
-        <div className="toggle-btn" onClick={toggleSidebar}>
-          <i className={`fas ${isSidebarOpen ? 'fa-chevron-left' : 'fa-chevron-right'}`}></i>
-        </div>
+    <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+      <div className="sidebar-header">
+        <button className="close-btn" onClick={toggleSidebar}>&times;</button>
+      </div>
+      <div className="sidebar-content">
         <ul>
-          <li><a href="#cart">Cart Items</a></li>
-          <li><a href="#checkout">Checkout</a></li>
-          <li><a href="#order-history">Order History</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#account">Account</a></li>
+          <li><a href="#help">Help & Support</a></li>
+          <li><a href="#info">Information</a></li>
+          <li><a href="#promotions">Promotions & Deals</a></li>
+          <li><a href="#social">Social Links</a></li>
+          <li><a href="#language">Language & Currency</a></li>
+          <li><a href="#miscellaneous">Miscellaneous</a></li>
         </ul>
       </div>
-      {/* Add cart items, checkout, and order history sections here */}
     </div>
   );
 }
