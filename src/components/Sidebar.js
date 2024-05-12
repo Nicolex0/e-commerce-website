@@ -1,13 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../App.css';
 
-function Sidebar() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
+function Sidebar({ isSidebarOpen, toggleSidebar }) {
   return (
     <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
       <div className="navbar">
@@ -26,4 +20,3 @@ function Sidebar() {
 }
 
 export default Sidebar;
-

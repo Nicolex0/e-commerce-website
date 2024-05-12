@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from './components/ProductCard';
 import Header from './components/Header';
+import Navbar from './components/Navbar'; // Import Navbar
 import './App.css';
 import Sidebar from './components/Sidebar';
 
@@ -18,27 +19,7 @@ function App() {
   return (
     <div className="App">
       {/* Nav Bar */}
-      <nav className="navbar">
-        <div className="navbar-left">OneStopShop</div>
-        <div className="navbar-center">
-          <input type="text" placeholder="Search for product category" />
-        </div>
-        <div className="navbar-right">
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#profile">Profile</a></li>
-            <li>
-              <a href="#cart" onClick={() => setShowSidebar(true)}>
-                Cart
-                {/*
-                  Add notification badge here to indicate the number of items in the cart
-                  Example: <span className="badge">{cartItemCount}</span>
-                */}
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar setShowSidebar={setShowSidebar} /> {/* Pass setShowSidebar as a prop */}
 
       {/* Header */}
       <Header />
