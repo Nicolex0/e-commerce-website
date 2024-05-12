@@ -156,7 +156,7 @@
   padding: 10px 20px;
   font-size: 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   margin: 20px; /* Adjust margin to space out from text */
 }
