@@ -121,24 +121,33 @@
 .header {
   position: relative;
   overflow: hidden; /* Hide overflowing content */
+  background-color: black; /* Add background color */
+  color: white; /* Set text color */
 }
 
 .header-content {
-  position: relative;
-  height: 400px; /* Set a specific height */
+  display: flex;
+  align-items: center;
+}
+
+.header-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header-image {
+  flex: 1;
 }
 
 .header img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
-}
-
-.shop-now-button-container {
-  position: absolute;
-  bottom: 20px; /* Adjust as needed */
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .shop-now-button {
@@ -149,4 +158,5 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin: 20px; /* Adjust margin to space out from text */
 }

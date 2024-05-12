@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from './components/ProductCard';
+import Header from './components/Header';
 import './App.css';
 import Sidebar from './components/Sidebar';
 
@@ -40,13 +41,10 @@ function App() {
       </nav>
 
       {/* Header */}
-      <header className="header">
-        <img src="/Free Photo _ Front view of cyber monday shopping cart with bags and copy space (1).jpeg" alt="Header Image" />
-        <button>Shop Now</button>
-      </header>
+      <Header />
 
       {/* Product Cards */}
-      <div className="product-cards">
+      <div id="product-cards" className="product-cards">
         {products.map(product => (
           <ProductCard
             key={product.id}
