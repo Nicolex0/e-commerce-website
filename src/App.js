@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import ProductCard from './components/ProductCard';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
-import './App.css';
 import Sidebar from './components/Sidebar';
+import './App.css';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -37,6 +37,7 @@ function App() {
       <footer className="footer">
         <p>&copy; {new Date().getFullYear()} OneStopShop. All rights reserved.</p>
       </footer>
+      <Sidebar isOpen={showSidebar} toggleSidebar={toggleSidebar} />
     </div>
   );
 }
