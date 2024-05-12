@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-function Sidebar({ isOpen, toggleSidebar }) {
+function Sidebar({ isOpen, toggleSidebar, handleCategoryClick }) {
   const [categories, setCategories] = useState([]);
-  const [showCategories, setShowCategories] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState('');
-  const [categoryProducts, setCategoryProducts] = useState([]);
-  const [showProducts, setShowProducts] = useState(false);
 
   useEffect(() => {
     fetchCategories();
@@ -21,28 +17,6 @@ function Sidebar({ isOpen, toggleSidebar }) {
     }
   };
 
-  const fetchCategoryProducts = async category => {
-    try {
-      const response = await fetch(`https://fakestoreapi.com/products/category/${category}`);
-      const data = await response.json();
-      setCategoryProducts(data);
-      setShowProducts(true);
-    } catch (error) {
-      console.error(`Error fetching products for category ${category}:`, error);
-    }
-  };
-
-  const handleCategoryClick = category => {
-    setSelectedCategory(category);
-    fetchCategoryProducts(category);
-  };
-
-  const handleCategoriesClick = () => {
-    setShowCategories(!showCategories);
-    setSelectedCategory('');
-    setShowProducts(false);
-  };
-
   return (
     <div className={`sidebar ${isOpen ? 'open' : ''}`}>
       <div className="sidebar-header">
@@ -51,42 +25,18 @@ function Sidebar({ isOpen, toggleSidebar }) {
       <div className="sidebar-content">
         <ul>
           <li>
-            <a href="#categories" onClick={handleCategoriesClick}>Categories</a>
-            {showCategories && (
-              <ul className="sub-categories">
-                {categories.map(category => (
-                  <li key={category}>
-                    <a
-                      href={`#${category}`}
-                      onClick={() => handleCategoryClick(category)}
-                    >
-                      {category}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
+            <a href="#categories" onClick={(e) => { e.preventDefault(); handleCategoryClick('electronics'); }}>Electronics</a>
           </li>
-          <li><a href="#account">Account</a></li>
-          <li><a href="#help">Help & Support</a></li>
-          <li><a href="#info">Information</a></li>
-          <li><a href="#promotions">Promotions & Deals</a></li>
-          <li><a href="#social">Social Links</a></li>
-          <li><a href="#language">Language & Currency</a></li>
-          <li><a href="#miscellaneous">Miscellaneous</a></li>
+          <li>
+            <a href="#categories" onClick={(e) => { e.preventDefault(); handleCategoryClick('jewelery'); }}>Jewelery</a>
+          </li>
+          <li>
+            <a href="#categories" onClick={(e) => { e.preventDefault(); handleCategoryClick('men\'s clothing'); }}>Men's Clothing</a>
+          </li>
+          <li>
+<a href="#categories" onClick={(e) => { e.preventDefault(); handleCategoryClick('women\'s clothing'); }}>Women's Clothing</a>
+          </li>
         </ul>
-      </div>
-      <div className="product-cards">
-        {showProducts &&
-          categoryProducts.map(product => (
-            <div key={product.id} className="product-card">
-              <img src={product.image} alt={product.title} />
-              <div className="product-details">
-                <h3>{product.title}</h3>
-                <p>${product.price}</p>
-              </div>
-            </div>
-          ))}
       </div>
     </div>
   );

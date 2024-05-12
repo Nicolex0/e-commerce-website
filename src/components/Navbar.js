@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar({ toggleSidebar }) {
   return (
@@ -7,7 +8,7 @@ function Navbar({ toggleSidebar }) {
         OneStopShop
       </div>
       <div className="navbar-center">
-        <input type="text" placeholder="Search for product..." />
+        <input type="text" placeholder="Search..." />
       </div>
       <div className="navbar-right">
         <ul className="navbar-links">
@@ -24,4 +25,3 @@ function Navbar({ toggleSidebar }) {
 }
 
 export default Navbar;
-
