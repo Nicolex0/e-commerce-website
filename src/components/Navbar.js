@@ -7,7 +7,7 @@ function Navbar({ toggleSidebar }) {
         OneStopShop
       </div>
       <div className="navbar-center">
-        <input type="text" placeholder="Search..." />
+        <input type="text" placeholder="Search for product..." />
       </div>
       <div className="navbar-right">
         <ul className="navbar-links">

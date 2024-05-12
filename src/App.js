@@ -7,37 +7,67 @@ import './App.css';
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [showSidebar, setShowSidebar] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [categoryProducts, setCategoryProducts] = useState([]);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-      .then(response => response.json())
-      .then(data => setProducts(data))
-      .catch(error => console.error('Error fetching data:', error));
+    fetchProducts();
   }, []);
 
-  const toggleSidebar = () => {
-    setShowSidebar(!showSidebar);
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch('https://fakestoreapi.com/products');
+      const data = await response.json();
+      setProducts(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  const fetchCategoryProducts = async category => {
+    try {
+      const response = await fetch(`https://fakestoreapi.com/products/category/${category}`);
+      const data = await response.json();
+      setCategoryProducts(data);
+    } catch (error) {
+      console.error(`Error fetching products for category ${category}:`, error);
+    }
+  };
+
+  const handleCategoryClick = category => {
+    setSelectedCategory(category);
+    fetchCategoryProducts(category);
   };
 
   return (
     <div className="App">
-      <Navbar toggleSidebar={toggleSidebar} />
+      <Navbar handleCategoryClick={handleCategoryClick} />
       <Header />
       <div id="product-cards" className="product-cards">
-        {products.map(product => (
-          <ProductCard
-            key={product.id}
-            image={product.image}
-            description={product.title}
-            price={product.price}
-          />
-        ))}
+        {selectedCategory ? (
+          categoryProducts.map(product => (
+            <ProductCard
+              key={product.id}
+              image={product.image}
+              description={product.title}
+              price={product.price}
+            />
+          ))
+        ) : (
+          products.map(product => (
+            <ProductCard
+              key={product.id}
+              image={product.image}
+              description={product.title}
+              price={product.price}
+            />
+          ))
+        )}
       </div>
       <footer className="footer">
         <p>&copy; {new Date().getFullYear()} OneStopShop. All rights reserved.</p>
       </footer>
-      <Sidebar isOpen={showSidebar} toggleSidebar={toggleSidebar} />
+      <Sidebar />
     </div>
   );
 }
