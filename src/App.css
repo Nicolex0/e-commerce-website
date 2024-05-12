@@ -4,9 +4,81 @@
   padding: 20px;
 }
 
-/* App.css */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Initially hide the sidebar to the left */
+  width: 300px;
+  height: 100%;
+  background-color: #f9f9f9;
+  transition: left 0.3s ease-in-out;
+  z-index: 999; /* Ensure the sidebar is above other content */
+}
 
-/* Footer styles */
+.sidebar.open {
+  left: 0; /* Slide in the sidebar when it's open */
+}
+
+.sidebar-header {
+  padding: 20px;
+  text-align: right;
+}
+
+.sidebar-content {
+  padding: 20px;
+  padding-bottom: 50px; /* Adjust padding to accommodate footer */
+}
+
+.sidebar-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-content ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar-content ul li a {
+  color: grey;
+  text-decoration: none;
+  border-bottom: 1px solid transparent; /* Initially transparent */
+  display: inline-block; /* Make the underline work properly */
+}
+
+.sidebar-content ul li a:hover {
+  color: black;
+  border-bottom-color: black; /* Change color on hover */
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.sub-categories {
+  margin-top: 10px;
+  padding-left: 20px;
+  list-style-type: none;
+  display: block;
+}
+
+.sub-categories li {
+  margin-bottom: 5px;
+}
+
+.sub-categories li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sub-categories li a:hover {
+  color: #ccc;
+}
+
 .footer {
   background-color: black; /* Black background color */
   color: white; /* White text color */
@@ -16,7 +88,7 @@
 
 /* Nav bar styles */
 .navbar {
-  background-color: #f9f9f9; /* Light gray background color */
+  background-color: #B2BEB5; /* Light gray background color */
   padding: 20px;
   font-family: 'Roboto', sans-serif; /* Use Roboto font */
   font-size: 20px; /* Increase font size */
@@ -168,3 +240,4 @@
 .menu-text {
   font-size: 1.5em !important;
 }
+
