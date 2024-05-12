@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from './components/ProductCard';
 import Header from './components/Header';
-import Navbar from './components/Navbar'; // Import Navbar
+import Navbar from './components/Navbar';
 import './App.css';
 import Sidebar from './components/Sidebar';
 
@@ -16,15 +16,14 @@ function App() {
       .catch(error => console.error('Error fetching data:', error));
   }, []);
 
+  const toggleSidebar = () => {
+    setShowSidebar(!showSidebar);
+  };
+
   return (
     <div className="App">
-      {/* Nav Bar */}
-      <Navbar setShowSidebar={setShowSidebar} /> {/* Pass setShowSidebar as a prop */}
-
-      {/* Header */}
+      <Navbar toggleSidebar={toggleSidebar} />
       <Header />
-
-      {/* Product Cards */}
       <div id="product-cards" className="product-cards">
         {products.map(product => (
           <ProductCard
@@ -35,14 +34,9 @@ function App() {
           />
         ))}
       </div>
-
-      {/* Footer */}
       <footer className="footer">
         <p>&copy; {new Date().getFullYear()} OneStopShop. All rights reserved.</p>
       </footer>
-
-      {/* Side Bar */}
-      {showSidebar && <Sidebar />}
     </div>
   );
 }
