@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import CategoryProducts from './components/CategoryProducts';
 import FeedbackPage from './components/FeedbackPage';
+import ContactPage from './components/ContactPage';
 import './App.css';
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
             </div>
           } />
           <Route path="/category/:categoryName" element={<CategoryProducts />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/feedback" element={<FeedbackPage />} />
         </Routes>
         <footer className="footer">
