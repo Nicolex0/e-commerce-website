@@ -51,9 +51,9 @@ function ContactPage() {
       <div className="main-content">
         <div className="contact-info">
           <h2>Contact Information</h2>
-          <p>Email: example@example.com</p>
-          <p>Phone: +1234567890</p>
-          <p>Address: 123 Main St, City, Country</p>
+          <p>Email: <a href="mailto:contact@OneStopShop.com">contact@OneStopShop.com</a></p>
+          <p>Phone: <a href="tel:+254771515168">+254 771 515 168</a></p>
+          <p>Address: Star Mall, Nairobi, Kenya</p>
         </div>
         <div className="contact-form">
           <h2>Send us a message</h2>
