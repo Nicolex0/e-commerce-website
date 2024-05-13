@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import CategoryProducts from './components/CategoryProducts';
+import FeedbackPage from './components/FeedbackPage';
 import './App.css';
 
 function App() {
@@ -41,7 +42,7 @@ function App() {
           <Route exact path="/" element={
             <div id="product-cards" className="product-cards">
               {selectedCategory ? (
-                <CategoryProducts category={selectedCategory} />
+                <CategoryProducts category={selectedCategory} products={categoryProducts} />
               ) : (
                 products.map((product) => (
                   <ProductCard
@@ -55,6 +56,7 @@ function App() {
             </div>
           } />
           <Route path="/category/:categoryName" element={<CategoryProducts />} />
+          <Route path="/feedback" element={<FeedbackPage />} />
         </Routes>
         <footer className="footer">
           <p>&copy; {new Date().getFullYear()} OneStopShop. All rights reserved.</p>

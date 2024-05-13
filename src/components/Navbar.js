@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 function Navbar({ toggleSidebar }) {
   return (
@@ -12,10 +12,10 @@ function Navbar({ toggleSidebar }) {
       </div>
       <div className="navbar-right">
         <ul className="navbar-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact Us</a></li>
-          <li><a href="#feedback">Feedback</a></li>
+          <li><Link to="/">Home</Link></li> {/* Use Link instead of a */}
+          <li><Link to="/about">About</Link></li> {/* Use Link instead of a */}
+          <li><Link to="/contact">Contact Us</Link></li> {/* Use Link instead of a */}
+          <li><Link to="/feedback">Feedback</Link></li> {/* Use Link instead of a */}
           <li className="cart-icon"><a href="#cart">&#128722;</a></li>
           <li className="menu-icon" onClick={toggleSidebar}><span className="menu-text">&#9776;</span></li>
         </ul>
