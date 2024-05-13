@@ -18,7 +18,7 @@ This project aims to develop an online store website that offers a user-friendly
 Nicole Ann Apono
 
 ## Live Demo
-https://e-commerce-website-blush-seven.vercel.app/feedback#categories
+[https://e-commerce-website-blush-seven.vercel.app/feedback#categories](https://e-commerce-website-c7v3g9vj3-nicoles-projects-a3ade0bd.vercel.app/)
 
 ## Technologies used
 1. React: JavaScript library for building user interfaces.
