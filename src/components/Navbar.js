@@ -13,7 +13,7 @@ function Navbar({ toggleSidebar, toggleCartPopup }) {
       <div className="navbar-right">
         <ul className="navbar-links">
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
+          <li><Link to="/sign Up">Sign Up</Link></li>
           <li><Link to="/contact">Contact Us</Link></li>
           <li><Link to="/feedback">Feedback</Link></li>
           <li className="cart-icon" onClick={toggleCartPopup}><a href="#cart">&#128722;</a></li>
