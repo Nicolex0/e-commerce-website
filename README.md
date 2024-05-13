@@ -1,5 +1,5 @@
 # E-commerce store
-C:\Users\User\OneDrive\Pictures\Screenshots\2024-05-13.png
+
 # Introduction
 This project aims to develop an online store website that offers a user-friendly interface, diverse product options, and efficient checkout processes.
 
