@@ -18,6 +18,10 @@ function FeedbackPage() {
     console.log(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
 
     setStatus('success');
+    // Clear the form fields after submission
+    setName('');
+    setEmail('');
+    setMessage('');
   };
 
   return (
@@ -49,8 +53,8 @@ function FeedbackPage() {
             value={message}
             onChange={event => setMessage(event.target.value)}
           ></textarea>
-          {status === 'error' && <p>Please fill out all required fields.</p>}
-          {status === 'success' && <p>Thank you for your feedback!</p>}
+          {status === 'error' && <p className="error-message">Please fill out all required fields.</p>}
+          {status === 'success' && <p className="success-message">Thank you for your feedback!</p>}
           <button type="submit">Submit</button>
         </form>
       </div>
