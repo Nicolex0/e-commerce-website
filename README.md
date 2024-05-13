@@ -1,4 +1,5 @@
 # E-commerce store
+![2024-05-13 (1)](https://github.com/Nicolex0/e-commerce-website/assets/156920830/69aafe10-b634-4dae-8330-b95408fbd558)
 
 # Introduction
 This project aims to develop an online store website that offers a user-friendly interface, diverse product options, and efficient checkout processes.
